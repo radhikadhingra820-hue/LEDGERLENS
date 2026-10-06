@@ -25,6 +25,11 @@ st.markdown("""
 h1,h2,h3,h4{color:#17343b!important}
 [data-testid="stMetricValue"]{overflow:visible!important}
 [data-testid="stMetricValue"] div{white-space:nowrap!important}
+.stTabs button{color:#315458!important}
+.stTabs button *{color:#315458!important}
+.stTabs button[aria-selected="true"]{color:white!important}
+.stTabs button[aria-selected="true"] *{color:white!important}
+.stTabs [data-baseweb="tab-highlight"]{background:#0f766e!important}
 
 </style>
 """,unsafe_allow_html=True)
@@ -46,10 +51,10 @@ a,b,c,d=st.columns(4)
 a.metric("Projects",f"{len(data):,}")
 b.metric("Anomalies",f"{int((data['anomaly']==-1).sum()):,}")
 c.metric("Avg Utilisation",f"{data['fund_utilisation'].mean():.1%}")
-d.metric("Model","Isolation Forest")
+d.metric("Detector","Isolation Forest")
 st.divider()
 
-overview,review,details=st.tabs(["📊 Overview","🚨 Review Queue","🔍 Project Details"])
+overview,review,details=st.tabs(["Overview","Review Queue","Project Details"])
 with overview:
     st.subheader("Project Overview")
     left,right=st.columns(2)
