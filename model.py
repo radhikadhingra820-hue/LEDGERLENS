@@ -7,12 +7,8 @@ from sklearn.preprocessing import StandardScaler
 DATASET_PATH=Path(__file__).resolve().parent/"sample_projects.csv"
 
 FEATURES=[
-    "cost_overrun",
-    "fund_utilisation",
-    "funds_released_ratio",
-    "time_elapsed",
-    "progress_vs_time",
-    "spend_vs_progress"
+    "cost_overrun","fund_utilisation","funds_released_ratio",
+    "time_elapsed","progress_vs_time","spend_vs_progress"
 ]
 
 def load_data():
