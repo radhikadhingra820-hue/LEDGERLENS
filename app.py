@@ -25,10 +25,11 @@ st.markdown("""
 h1,h2,h3,h4{color:#17343b!important}
 [data-testid="stMetricValue"]{overflow:visible!important}
 [data-testid="stMetricValue"] div{white-space:nowrap!important}
-.stTabs button{color:#315458!important}
-.stTabs button *{color:#315458!important}
-.stTabs button[aria-selected="true"]{color:white!important}
-.stTabs button[aria-selected="true"] *{color:white!important}
+[data-testid="stMetricValue"]{font-size:1.55rem!important}
+.stTabs [role="tab"]{color:#315458!important;opacity:1!important}
+.stTabs [role="tab"] *{color:#315458!important;opacity:1!important}
+.stTabs [role="tab"][aria-selected="true"]{color:#0f766e!important;opacity:1!important}
+.stTabs [role="tab"][aria-selected="true"] *{color:#0f766e!important;opacity:1!important}
 .stTabs [data-baseweb="tab-highlight"]{background:#0f766e!important}
 
 </style>
