@@ -2,15 +2,17 @@
 
 **Public Development Project Anomaly Detection**
 
-LEDGERLENS is a Streamlit machine-learning prototype that uses exploratory analysis, engineered project metrics and Isolation Forest to flag unusual public development project behaviour.
+LEDGERLENS is a Streamlit machine-learning prototype that uses exploratory analysis, engineered project metrics and Isolation Forest to flag unusual public development project behaviour for further human review.
 
 ## Live Demo
 
-Deploy from this repository with Streamlit Community Cloud and add the generated `streamlit.app` link here.
+https://ledgerlens-e8hogp188mynxsm2jfnw2.streamlit.app/
 
 ## Problem
 
 Public development projects produce information about project cost, spending, fund release, utilisation, progress and timelines. Unusual combinations of these values can help identify projects for further review.
+
+LEDGERLENS is a **screening tool, not a fraud or corruption detector**. An anomaly means the project's behaviour is unusual relative to the portfolio; it does not prove wrongdoing.
 
 ## What the prototype does
 
@@ -18,11 +20,11 @@ Public development projects produce information about project cost, spending, fu
 - Isolation Forest anomaly detection
 - Review queue for flagged projects
 - Project-level anomaly explanations
-- Sector-based peer comparisons
+- Sector-aware peer comparisons
 
 ## ML Pipeline
 
-Project data → Feature engineering → Standardization → Isolation Forest → Anomaly score → Review
+Project data → Feature engineering → Standardization → Isolation Forest → Anomaly score → Human review
 
 ## Baseline Features
 
@@ -35,11 +37,11 @@ Project data → Feature engineering → Standardization → Isolation Forest �
 
 ## Dataset
 
-The repository includes a compact seed CSV for reproducibility. The baseline expands it deterministically to a 260-project development portfolio when needed, so the anomaly detector has enough observations for a meaningful baseline. The generated portfolio is synthetic and should not be presented as an official government dataset.
+The repository contains a reproducible **260-project synthetic starter dataset**. It is designed to simulate public development project behaviour and includes sectors, districts, estimated and actual cost, funds released and utilised, planned and elapsed days, and progress. It must not be presented as official government data.
 
 ## Tech Stack
 
-Python • Pandas • NumPy • scikit-learn • Isolation Forest • Streamlit
+Python • Pandas • NumPy • scikit-learn • Isolation Forest • Streamlit • GitHub
 
 ## Run locally
 
@@ -48,16 +50,23 @@ python -m pip install -r requirements.txt
 python -m streamlit run app.py
 ```
 
-## Competition Challenge
+## Competition Workflow
 
-Participants receive a working anomaly-detection baseline and can improve it through GitHub Issues.
+The base repository is intentionally a working baseline. Participants should:
 
-Suggested directions:
+1. Pick one open GitHub Issue.
+2. Clone the repository and reproduce the baseline.
+3. Make the improvement on their own branch.
+4. Compare the result with the baseline.
+5. Open a Pull Request linked to the issue.
+6. Explain what changed, why it helps, and how it was evaluated.
 
-1. Improve anomaly detection
-2. Improve feature engineering
-3. Improve anomaly explanations
-4. Compare anomaly-detection approaches
+### Open Challenges
+
+1. [Improve anomaly detection](https://github.com/radhikadhingra820-hue/LEDGERLENS/issues/1)
+2. [Improve feature engineering](https://github.com/radhikadhingra820-hue/LEDGERLENS/issues/2)
+3. [Improve anomaly explanations](https://github.com/radhikadhingra820-hue/LEDGERLENS/issues/3)
+4. [Compare anomaly-detection models](https://github.com/radhikadhingra820-hue/LEDGERLENS/issues/4)
 
 ## Project Structure
 
