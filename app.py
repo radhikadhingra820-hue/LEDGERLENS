@@ -15,12 +15,17 @@ st.markdown("""
 [data-testid="stMetricLabel"],[data-testid="stMetricLabel"] *{color:#55706f!important}
 [data-testid="stMetricValue"],[data-testid="stMetricValue"] *{color:#17343b!important}
 .stTabs [data-baseweb="tab-list"]{gap:.45rem}
-.stTabs [data-baseweb="tab"]{background:#e8f1ef;color:#315458!important;border-radius:10px 10px 0 0;padding:.55rem 1rem}
-.stTabs [data-baseweb="tab"] *{color:inherit!important}
-.stTabs [aria-selected="true"]{background:#0f766e;color:white!important}
-.stTabs [aria-selected="true"] *{color:white!important}
+.stTabs [data-baseweb="tab"]{background:#e8f1ef!important;color:#315458!important;border-radius:10px 10px 0 0;padding:.55rem 1rem}
+.stTabs [data-baseweb="tab"] *{color:#315458!important}
+.stTabs [data-baseweb="tab"][aria-selected="true"]{background:#0f766e!important;color:white!important}
+.stTabs [data-baseweb="tab"][aria-selected="true"] *{color:white!important}
 [data-testid="stSelectbox"] label,[data-testid="stSelectbox"] label *{color:#55706f!important}
+[data-testid="stSelectbox"] div{color:#17343b}
 .stMarkdown p,.stMarkdown span,.stCaption{color:#294347}
+h1,h2,h3,h4{color:#17343b!important}
+[data-testid="stMetricValue"]{overflow:visible!important}
+[data-testid="stMetricValue"] div{white-space:nowrap!important}
+
 </style>
 """,unsafe_allow_html=True)
 st.markdown("""
