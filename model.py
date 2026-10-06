@@ -9,16 +9,20 @@ FEATURES=["cost_overrun","fund_utilisation","funds_released_ratio","time_elapsed
 
 def load_data():
     data=pd.read_csv(DATASET_PATH)
-    numeric=["estimated_cost","actual_cost","funds_released","funds_utilised","planned_days","elapsed_days","progress"]
+    rename={"project_id":"id","project_name":"name","estimated_cost":"est_cost","funds_utilised":"funds_used","planned_days":"planned_days","elapsed_days":"elapsed_days","progress":"progress_pct"}
+    data=data.rename(columns=rename)
+    numeric=["est_cost","actual_cost","funds_released","funds_used","planned_days","elapsed_days","progress_pct"]
     for col in numeric:
         data[col]=pd.to_numeric(data[col],errors="coerce").fillna(0)
-    data["progress"]=data["progress"].clip(0,1)
-    data["cost_overrun"]=(data["actual_cost"]-data["estimated_cost"])/data["estimated_cost"].replace(0,np.nan)
-    data["fund_utilisation"]=(data["funds_utilised"]/data["funds_released"].replace(0,np.nan)).replace([np.inf,-np.inf],np.nan).fillna(0).clip(0,1)
-    data["funds_released_ratio"]=(data["funds_released"]/data["estimated_cost"].replace(0,np.nan)).replace([np.inf,-np.inf],np.nan).fillna(0)
+    if data["progress_pct"].max(skipna=True)<=1.5:
+        data["progress_pct"]=data["progress_pct"]*100
+    data["progress_pct"]=data["progress_pct"].clip(0,100)
+    data["cost_overrun"]=(data["actual_cost"]-data["est_cost"])/data["est_cost"].replace(0,np.nan)
+    data["fund_utilisation"]=(data["funds_used"]/data["funds_released"].replace(0,np.nan)).replace([np.inf,-np.inf],np.nan).fillna(0).clip(0,1)
+    data["funds_released_ratio"]=(data["funds_released"]/data["est_cost"].replace(0,np.nan)).replace([np.inf,-np.inf],np.nan).fillna(0)
     data["time_elapsed"]=(data["elapsed_days"]/data["planned_days"].replace(0,np.nan)).replace([np.inf,-np.inf],np.nan).fillna(0)
-    data["progress_vs_time"]=data["progress"]-data["time_elapsed"].clip(upper=1)
-    data["spend_vs_progress"]=data["fund_utilisation"]-data["progress"]
+    data["progress_vs_time"]=data["progress_pct"]/100-data["time_elapsed"].clip(upper=1)
+    data["spend_vs_progress"]=data["fund_utilisation"]-data["progress_pct"]/100
     return data.replace([np.inf,-np.inf],np.nan).fillna(0)
 
 def run_anomaly_detection(contamination=.12):
