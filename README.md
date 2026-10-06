@@ -6,7 +6,7 @@ LEDGERLENS is a Streamlit machine-learning prototype that uses exploratory analy
 
 ## Live Demo
 
-Add the deployed Streamlit link here after deployment.
+Deploy from this repository with Streamlit Community Cloud and add the generated `streamlit.app` link here.
 
 ## Problem
 
@@ -35,7 +35,7 @@ Project data → Feature engineering → Standardization → Isolation Forest �
 
 ## Dataset
 
-The starter prototype uses a controlled sample public-works dataset so the baseline is reproducible. It is intentionally suitable for demonstrating anomaly-detection improvements; it should not be presented as an official government dataset.
+The repository includes a compact seed CSV for reproducibility. The baseline expands it deterministically to a 260-project development portfolio when needed, so the anomaly detector has enough observations for a meaningful baseline. The generated portfolio is synthetic and should not be presented as an official government dataset.
 
 ## Tech Stack
 
