@@ -8,7 +8,7 @@ Public Development Project Anomaly Detection
 Public development projects can show unusual relationships between spending, cost, utilisation, progress and timelines.
 
 ## 3. Solution
-LEDGERLENS uses engineered project indicators and Isolation Forest to flag unusual projects for review.
+LEDGERLENS uses engineered project indicators and Isolation Forest to flag unusual projects for further human review.
 
 ## 4. ML Pipeline
 Project data → Feature engineering → Standardization → Isolation Forest → Anomaly score
@@ -18,17 +18,24 @@ Show:
 - EDA dashboard
 - Anomaly review queue
 - Project details
-- Peer comparison
-- Explanation panel
+- Sector-aware explanations
+- Spending vs progress visualization
 
 ## 6. Baseline
-- Controlled starter dataset
+- 260-project synthetic starter dataset
 - Six engineered features
 - Isolation Forest
-- Sector-based explanation rules
+- Rule-based sector peer explanations
 
 ## 7. Competition Challenge
-Participants improve the anomaly-detection baseline through GitHub Issues.
+Participants improve the baseline through GitHub Issues and Pull Requests:
+1. Improve anomaly detection
+2. Improve feature engineering
+3. Improve anomaly explanations
+4. Compare anomaly-detection approaches
 
 ## 8. Tech Stack
 Python • Pandas • NumPy • scikit-learn • Streamlit • GitHub
+
+## 9. Important Limitation
+An anomaly is not proof of fraud or corruption. LEDGERLENS is a screening prototype for prioritising projects for human review.
