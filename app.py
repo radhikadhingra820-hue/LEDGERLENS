@@ -11,11 +11,16 @@ st.markdown("""
 .hero-kicker{font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#bdeee7}
 .hero-title{font-size:2.6rem;font-weight:850;letter-spacing:.06em;color:white}
 .hero-subtitle{color:#e1f6f2;font-size:1rem;margin-top:.35rem}
-[data-testid="stMetric"]{background:rgba(255,255,255,.82);border:1px solid #d7e4e2;border-radius:16px;padding:.8rem 1rem;box-shadow:0 5px 18px rgba(36,58,61,.06)}
-[data-testid="stMetricLabel"]{color:#55706f}
+[data-testid="stMetric"]{background:rgba(255,255,255,.92);border:1px solid #d2e1df;border-radius:16px;padding:.8rem 1rem;box-shadow:0 5px 18px rgba(36,58,61,.06)}
+[data-testid="stMetricLabel"],[data-testid="stMetricLabel"] *{color:#55706f!important}
+[data-testid="stMetricValue"],[data-testid="stMetricValue"] *{color:#17343b!important}
 .stTabs [data-baseweb="tab-list"]{gap:.45rem}
-.stTabs [data-baseweb="tab"]{background:#e8f1ef;border-radius:10px 10px 0 0;padding:.55rem 1rem}
-.stTabs [aria-selected="true"]{background:#0f766e;color:white}
+.stTabs [data-baseweb="tab"]{background:#e8f1ef;color:#315458!important;border-radius:10px 10px 0 0;padding:.55rem 1rem}
+.stTabs [data-baseweb="tab"] *{color:inherit!important}
+.stTabs [aria-selected="true"]{background:#0f766e;color:white!important}
+.stTabs [aria-selected="true"] *{color:white!important}
+[data-testid="stSelectbox"] label,[data-testid="stSelectbox"] label *{color:#55706f!important}
+.stMarkdown p,.stMarkdown span,.stCaption{color:#294347}
 </style>
 """,unsafe_allow_html=True)
 st.markdown("""
