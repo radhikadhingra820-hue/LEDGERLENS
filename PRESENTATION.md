@@ -28,11 +28,11 @@ Show:
 - Rule-based sector peer explanations
 
 ## 7. Competition Challenge
-Participants improve the baseline through GitHub Issues and Pull Requests:
-1. Improve anomaly detection
-2. Improve feature engineering
-3. Improve anomaly explanations
-4. Compare anomaly-detection approaches
+Participants improve the baseline through difficulty-labelled GitHub Issues and Pull Requests:
+- **Easy:** Audit anomaly results and establish evaluation baseline
+- **Medium:** Improve project feature engineering
+- **Medium:** Improve anomaly explanations with evidence
+- **Hard:** Compare anomaly-detection methods
 
 ## 8. Tech Stack
 Python • Pandas • NumPy • scikit-learn • Streamlit • GitHub
