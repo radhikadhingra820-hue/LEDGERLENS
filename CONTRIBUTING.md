@@ -1,33 +1,28 @@
 # Contributing to LEDGERLENS
 
-LEDGERLENS is a baseline anomaly-detection prototype prepared for an online coding event.
+LEDGERLENS is a baseline anomaly-detection prototype for an online coding event. Open GitHub Issues define the tasks and carry an `easy`, `medium`, or `hard` difficulty label.
 
-## Recommended workflow
+## Workflow
 
-1. Choose one open issue.
-2. Fork or clone the repository.
-3. Reproduce the current baseline before changing it.
-4. Create a branch for your work.
-5. Make focused changes related to the selected issue.
-6. Run the tests locally.
-7. Compare your result with the baseline.
-8. Open a Pull Request and link the issue.
-9. In the Pull Request, explain the method, results, examples, and limitations.
+1. Read the open Issues and choose one that matches your experience.
+2. Comment on the issue before starting to reduce duplicate work.
+3. Fork or clone the repository and create a branch.
+4. Reproduce the current Isolation Forest baseline.
+5. Make a focused change related to the selected issue.
+6. Run the tests and verify the app locally.
+7. Open a Pull Request linking the issue (for example, `Closes #2`).
 
-## ML changes
+## Evaluating anomaly detection
 
-For anomaly-detection improvements, report:
+Report the method, feature changes, preprocessing, parameter choices, anomaly rate, and examples of projects whose flags changed. Explain why the result is useful and document assumptions and limitations.
 
-- The method or feature changes
-- The baseline and new anomaly rates
-- Examples of projects whose flag changed
-- Why the new approach is better
-- Any assumptions or limitations
+Do not report accuracy or other supervised metrics unless reliable ground-truth labels exist. Keep evaluation separate from model development and avoid data leakage. An unusual project is a candidate for human review, not proof of fraud or corruption.
 
-Keep evaluation data separate from model development and avoid data leakage.
+## General guidelines
 
-## Scope
+- Explain what changed, why, and how it was tested.
+- Keep code, plots, and documentation understandable to other students.
+- Do not commit secrets, virtual environments, or generated cache files.
+- Remember that the starter dataset is synthetic and does not represent official government findings.
 
-The current starter dataset is synthetic and reproducible. Do not claim that flagged projects represent real government findings.
-
-UI improvements, documentation improvements, tests, feature engineering, model comparison, and explainability work are all welcome when they support an open issue.
+Difficulty labels describe expected scope, not guaranteed completion time.
